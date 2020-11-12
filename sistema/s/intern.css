@@ -1,0 +1,81 @@
+body {
+    background-color: #FCFCFC;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.topLogin {position: absolute;
+    width: 100%;
+    height: 13.5%;
+    left: 0%;
+    top: 0%;
+    background-color: white;
+    box-shadow: 0px 2px #DCDCDC;
+
+}
+
+
+.fonttop {
+    position: absolute;
+    color: white;
+    top: 20%;
+    left: 2.5%;
+    font-family: 'Bree Serif', serif;
+    font-size: 21.5px;
+    color:black;
+}
+
+.fonttop:hover {
+    color: #52B4E6;
+}
+
+
+
+.fonttop2 {
+    position: absolute;
+    top: 25%;
+    left: 87%;
+    font-family: 'Bree Serif', serif;
+    font-size: 35px;
+    color: black;
+}
+
+.fonttop2:hover {
+    color: #52B4E6;
+}
+
+.esquerda{position: absolute;
+    width: 50%;
+    height: 20%;
+    left: 0%;
+    top: 20%;
+}
+
+.roxo{position: absolute;
+    width: 100%;
+    height: 431.2%;
+    top: -31.5%;
+    left: 0%;
+}
+
+.login{position: absolute;
+    width: 50%;
+    height: 86.2%;
+    left: 50%;
+    top: 13.75%;
+    background-color: #FCFCFC;
+}
+
+.box{position: absolute;
+    width: 70%;
+    height: 50%;
+    top: 25%;
+    left: 15%;
+}
+
+.cadastre{position:absolute;
+    left: 30%;
+    top: 30%;
+}
+

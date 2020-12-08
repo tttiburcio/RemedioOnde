@@ -66,7 +66,7 @@
             <input type="text" id="susCliente" name="susCliente" placeholder="Número SUS" required maxlength="18" minlength="18" />
           </div>
           <input type="submit" class="btn" name="btnCadUsuario" id="btnCadUsuario" value="Confirmar" />
-          <p class="social-text">Obrigado pela preferência!</p>
+          <p class="social-text">Agradecemos a preferência!</p>
           <div class="social-media">
 
           </div>

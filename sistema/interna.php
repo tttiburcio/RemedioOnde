@@ -167,6 +167,13 @@ include_once("../verificaLogin.php");
         margin-top: -1%;
         color: #4D83FF;
     }
+
+    #init {
+        width: 80%;
+        margin-left: 15%;
+        height: 100%;
+        margin-top: -10%;
+    }
 </style>
 
 <body>
@@ -239,32 +246,52 @@ include_once("../verificaLogin.php");
                 </div>
                 <hr>
 
-                <div class="row">
-                    <div class="col-md-12 stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <p id="Agendamentos" class="card-title"></p>
-                                <div class="modal fade" id="myModaledit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Edite uma Consulta...</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="seila" id="seila"></div>
-                                            </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="box-title">Atualizações </h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="card-body">
+                                    <!-- <canvas id="TrafficChart"></canvas>   -->
+                                    <img src="img/init.svg" id="init">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card-body">
+                                    <div class="progress-box progress-1">
+                                        <h4 class="por-title">Medicamentos</h4>
+                                        <div class="por-txt">35% Cadastrados</div>
+                                        <div class="progress mb-2" style="height: 5px;">
+                                            <div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
-                                </div>
-                                </tbody>
-                                </table>
+                                    <div class="progress-box progress-2">
+                                        <h4 class="por-title">Usuários Atuais</h4>
+                                        <div class="por-txt">29,658 Usuários</div>
+                                        <div class="progress mb-2" style="height: 5px;">
+                                            <div class="progress-bar bg-flat-color-3" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-box progress-2">
+                                        <h4 class="por-title">Postos de Saúde</h4>
+                                        <div class="por-txt">97,99% disponíveis</div>
+                                        <div class="progress mb-2" style="height: 5px;">
+                                            <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div> <!-- /.card-body -->
                             </div>
-                        </div>
+                        </div> <!-- /.row -->
+                        <div class="card-body"></div>
                     </div>
-                </div>
+                </div><!-- /# column -->
             </div>
         </div>
+    </div>
+    </div>
+    </div>
     </div>
     </div>
     <script src="vendors/base/vendor.bundle.base.js"></script>

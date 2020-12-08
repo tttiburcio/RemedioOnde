@@ -9,20 +9,6 @@ $laboratorioMedicamento = $_POST['laboratorioMedicamento'];
 
 $conn = getConnection();
 
-//testando pra ver se os valores estão passando
-/* print($nomeMedicamento);
-echo "<br>";
-print($descricaoMedicamento);
-echo "<br>";
-print($doseMedicamento);
-echo "<br>";
-print($tipagemMedicamento);
-echo "<br>";
-print($laboratorioMedicamento);
-echo "<br>";
-print($statusMedicamento);
-echo "<br>"; */
-
 $result = mysqli_query($conn, "INSERT INTO tbmedicamento(nomeMedicamento, descricaoMedicamento, codDosagem, codTipagem, codLaboratorio) VALUES ('$nomeMedicamento', '$descricaoMedicamento', '$doseMedicamento', '$tipagemMedicamento','$laboratorioMedicamento')");
 
 closeConnection($conn);

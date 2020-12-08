@@ -11,9 +11,17 @@ function parseToXML($htmlStr)
     return $xmlStr;
 }
 
+$code = $_GET['code'];
+
 // Select all the rows in the markers table
-$result_markers = "SELECT * FROM markers";
-$resultado_markers = mysqli_query($conn, $result_markers);
+$result_markers = "";
+if ($code == -1) {
+    $result_markers = "SELECT * FROM markers";
+    $resultado_markers = mysqli_query($conn, $result_markers);
+} else {
+    $result_markers = "SELECT * FROM tbmedicamento_ubs mu inner join markers m on mu.codUbs = m.codUbs where mu.codMedicamento = $code";
+    $resultado_markers = mysqli_query($conn, $result_markers);
+}
 
 header("Content-type: text/xml");
 

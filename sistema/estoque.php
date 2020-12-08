@@ -283,14 +283,14 @@ include_once("../verificaLogin.php");
                                                 <?php
                                                 include_once '../conexao.php';
                                                 $conn = getConnection();
-                                                $result = mysqli_query($conn, "Select * From tbmedicamento m inner join tbtipaggem tp ON m.codTipagem = tp.codTipagem inner join tbdosagem ds ON m.codDosagem = ds.codDosagem inner join tblaboratorio lb ON m.codLaboratorio = lb.codLaboratorio inner join tbmedicamento_ubs mu ON m.codMedicamento = mu.codMedicamento ORDER BY m.nomeMedicamento");
+                                                $result = mysqli_query($conn, "Select * From tbmedicamento m inner join tbtipaggem tp ON m.codTipagem = tp.codTipagem inner join tbdosagem ds ON m.codDosagem = ds.codDosagem inner join tblaboratorio lb ON m.codLaboratorio = lb.codLaboratorio ORDER BY m.nomeMedicamento");
                                                 while ($linha = mysqli_fetch_array($result)) {
                                                     echo "<tr><td><center>" . $linha["nomeMedicamento"] . "</center></td>";
                                                     echo "<td><center>" . $linha["descricaoMedicamento"] . "</center></td>";
                                                     echo "<td><center>" . $linha["descricaoTipagem"] . "</center></td>";
                                                     echo "<td><center>" . $linha["doseMedicamento"] . "</center></td>";
                                                     echo "<td><center>" . $linha["nomeLaboratorio"] . "</center></td>";
-                                                    echo "<td><center><a href=excluirMedicamento.php?codMedicamento=" . $linha['codMedicamento'] . ">Remover</center></td></tr>";
+                                                    echo "<td><center><a href=excluirMedicamento.php?codMedicamento=" . $linha['codMedicamento'] . ">Excluir</center></td></tr>";
                                                 }
                                                 ?>
 

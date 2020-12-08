@@ -97,7 +97,7 @@
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#local">UBS's</a></li>
                     <li><a href="#testimonials">Time</a></li>
-                    <li><a href="http://medicbros.atwebpages.com/">Essence</a></li>
+                    <li><a href="http://tccessence.myartsonline.com/" target="_blank">Essence</a></li>
                     <li><a href="entrada.php">Login</a></li>
                 </ul>
             </nav><!-- .main-nav -->

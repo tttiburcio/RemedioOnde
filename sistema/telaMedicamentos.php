@@ -15,11 +15,19 @@
 
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Chivo" rel="stylesheet">
 
-    <link href="../css/gg.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <link href="../css/fns.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
 
     <script type="text/javascript">
         function buscaDosagem() {
@@ -107,6 +115,10 @@
             border-radius: 10px;
             width: 65%;
         }
+
+        #laboratorioMedicamento {
+            width: 65%;
+        }
     </style>
 
 </head>
@@ -149,13 +161,6 @@
                                 <input type="text" class="form-control" name="nomeMedicamento" id="nomeMedicamento" placeholder="Nome Medicamento">
                             </div>
                         </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-10">
-                                <input type="text" class="form-control" name="descricaoMedicamento" id="descricaoMedicamento" placeholder="Descrição Medicamento">
-                            </div>
-                        </div>
-
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <select id="tipagemMedicamento" name="tipagemMedicamento" class="form-control" onchange="return buscaDosagem()">
@@ -179,8 +184,7 @@
 
                         <div class="form-row">
                             <div class="form-group col-md-8">
-                                <select id="laboratorioMedicamento" name="laboratorioMedicamento" class="form-control">
-                                    <option>Laboratódio de Fabricação :</option>
+                                <select class="selectpicker" data-width="100%" title="Laboratório de Fabricação:" data-live-search="true" id="laboratorioMedicamento" name="laboratorioMedicamento">
                                     <?php
                                     include_once '../conexao.php';
                                     $conn = getConnection();
@@ -195,10 +199,16 @@
                                 <button id="lef" type="button" class="btn btn-info mt-2 mt-xl-0" data-toggle="modal" data-toggle='modal' data-target='#modalSenha' data-whatever='@mdo'>Adicionar</button>
                             </div>
                         </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-10">
+                                <input type="text" class="form-control" name="descricaoMedicamento" id="descricaoMedicamento" placeholder="Descrição Medicamento">
+                            </div>
+                        </div>
                         <div class="form-group">
                         </div>
                         <br>
-                        <button id="bt" type="submit" class="btn btn-primary">Enviar</button>
+                        <button id="bt" type="submit" class="btn btn-info">Enviar</button>
                     </form>
                 </div>
             </div>

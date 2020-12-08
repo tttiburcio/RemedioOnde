@@ -4,7 +4,6 @@ include_once("conexao.php");
 $emailCli = $_POST['txtEmail'];
 $senhaCli = $_POST['txtSenha'];
 
-
 $conn = getConnection();
 
 $verifica = mysqli_query($conn, "Select * From tbcliente where emailCliente = '" . $emailCli . "' and senhaCliente = '" . $senhaCli . "'");
@@ -13,6 +12,7 @@ $verifica2 = mysqli_query($conn, "Select * From tbadm where emailAdm = '" . $ema
 
 $verifica3 = mysqli_query($conn, "Select * From markers where address = '" . $emailCli . "' and senhaUbs = '" . $senhaCli . "'");
 
+$verifica4 = mysqli_query($conn, "Select * From markers where nicknameUbs = '" . $emailCli . "' and senhaUbs = '" . $senhaCli . "'");
 
 closeConnection($conn);
 
@@ -24,7 +24,7 @@ if (mysqli_num_rows($verifica) > 0) {
     $_SESSION['nomeCliente'] = $linha["nomeCliente"];
   }
 
-  header("Location: sistema/internaCliente.php");
+  header("Location: sistema/paciente/internaCliente.php");
 } else if (mysqli_num_rows($verifica2) > 0) {
   session_start();
   $_SESSION['emailCliente'] = $emailCli;
@@ -38,8 +38,20 @@ if (mysqli_num_rows($verifica) > 0) {
   while ($linha = mysqli_fetch_array($verifica3)) {
     $_SESSION['address'] = $linha["address"];
     $_SESSION['codUbs'] = $linha["codUbs"];
+    if ($linha["nicknameUbs"] == "") {
+      header("Location: sistema/complementoUbs.php");
+    } else {
+      header("Location: sistema/internaPosto.php");
+    }
   }
-
+} else if (mysqli_num_rows($verifica4) > 0) {
+  session_start();
+  $_SESSION['emailCliente'] = $emailCli;
+  $_SESSION['senhaCliente'] = $senhaCli;
+  while ($linha = mysqli_fetch_array($verifica4)) {
+    $_SESSION['address'] = $linha["address"];
+    $_SESSION['codUbs'] = $linha["codUbs"];
+  }
   header("Location: sistema/internaPosto.php");
 } else {
 
